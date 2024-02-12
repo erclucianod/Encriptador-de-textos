@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F3F5FC;
+
+}
+
+.container-principal {
+    position: relative;
+    /*para que no sea estático*/
+    width: 100vw;
+    /*para que ocupe el 100% de la pantalla en ancho(vw)*/
+    height: 100vh;
+    /*para que ocupe el 100% de la pantalla en alto (vh)*/
+    background-color: #F3F5FC;
+}
+
+.texto {
+    /*layout*/
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    top: 15%;
+    left: 12%;
+
+    /*Tipografía*/
+    border: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0A3871;
+
+    /*Color*/
+    background: #F3F5FC;
+}
+
+.texto::placeholder {
+    color: #0A3871;
+}
+
+.texto:focus,
+.texto:active {
+    border: none;
+    outline: none;
+}
+
+.alerta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 80%;
+}
+
+.alerta p {
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0em;
+    text-align: left;
+    opacity: 80%;
+    color: #495057;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+    gap: 24px;
+    /*espaciamento entre íems*/
+
+}
+
+.btn-encriptar {
+    align-items: center;
+    justify-content: center;
+    /*para que el contenido se justifique al centro*/
+    padding: 2%;
+    /*este es el espaciamiento interno para el contenido*/
+    width: 25%;
+    gap: 8px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btn-desencriptar {
+    box-sizing: border-box;
+    justify-content: center;
+    /*para que el contenido se justifique al centro*/
+    padding: 2%;
+    /*este es el espaciamiento interno para el contenido*/
+    width: 25%;
+    gap: 8px;
+    background: #D8DFE8;
+    border: solid 1px #0A3871;
+    border-radius: 24px;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #0A3871;
+}
+
+.btn-encriptar:hover, 
+.btn-desencriptar:hover{
+    margin: 0.3%;
+    width: 24.5%;
+    padding: 1,8%;
+}
+
