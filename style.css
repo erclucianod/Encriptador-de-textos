@@ -1,21 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-header {
+body {
     background-color: #F3F5FC;
 
+}
+
+.logo {
+    width: Fixed (120px);
+    height: Fixed (48px);
+    top: 40px;
+    left: 40px;
+    gap: 40px;
 }
 
 .container-principal {
-    position: relative;
-    /*para que no sea estático*/
-    width: 100vw;
-    /*para que ocupe el 100% de la pantalla en ancho(vw)*/
-    height: 100vh;
-    /*para que ocupe el 100% de la pantalla en alto (vh)*/
-    background-color: #F3F5FC;
+    width: 1440px;
+    height: 1024px;
+    top: 622px;
+    left: -2277px;
+    background: #F3F5FC;
+
 }
 
 .texto {
@@ -32,7 +34,7 @@ header {
     font-style: normal;
     font-size: 32px;
     font-weight: 400;
-    line-height: 150%;
+    line-height: 48px;
     letter-spacing: 0em;
     text-align: left;
     color: #0A3871;
@@ -68,7 +70,7 @@ header {
     font-style: normal;
     font-size: 12px;
     font-weight: 400;
-    line-height: 150%;
+    line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
     opacity: 80%;
@@ -131,10 +133,70 @@ header {
     color: #0A3871;
 }
 
-.btn-encriptar:hover, 
-.btn-desencriptar:hover{
+.btn-encriptar:hover,
+.btn-desencriptar:hover {
     margin: 0.3%;
     width: 24.5%;
-    padding: 1,8%;
+    padding: 1.8%;
+}
+
+.container-resultado {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    left: 60%;
+    top: 5%;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px #00000014;
+    border-radius: 32px;
+}
+
+
+.encriptado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    text-align: center;
+}
+
+.encriptado h2 {
+    width: 60%;
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #343A40;
+}
+
+.encriptado p {
+    width: 80%;
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #495057;
+
+}
+
+.muneco {
+    position: absolute;
+    width: 80%;
+    /* Porcentaje del ancho de la pantalla */
+    height: 50%;
+    /* Permitir que la altura se ajuste automáticamente */
+    top: 15%;
+    /* Porcentaje de la altura de la pantalla */
 }
 
