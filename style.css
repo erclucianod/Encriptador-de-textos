@@ -1,137 +1,204 @@
+:root {
+    --color-azul: #0A3871;
+    --color-claro: #F3F5FC;
+    --color-gris: #D8DFE8;
+    --color-gris-oscuro: #343A40;
+}
+
 body {
     background-color: #F3F5FC;
+    
 
 }
 
+/* Desarrollo del header */
 .logo {
-    width: Fixed (120px);
-    height: Fixed (48px);
-    top: 40px;
-    left: 40px;
-    gap: 40px;
+    width: 90%;
+    margin: auto;
 }
 
+.imlogo {
+    margin-top: 40px;
+}
+
+/* Desarrollo del main */
+/* Desarrollo del contenedor principal */
 .container-principal {
-    width: 1440px;
-    height: 1024px;
-    top: 622px;
-    left: -2277px;
-    background: #F3F5FC;
+    width: 80%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: calc(100vh - 91px - 72px);
+    align-items: end;
 
 }
 
-.texto {
-    /*layout*/
-    position: absolute;
-    width: 42%;
-    height: 60%;
-    top: 15%;
-    left: 12%;
+/* Desarrollo del contenedor izquierdo */
+.container-ingreso {
+    height: 90%;
+    background: var(--color-claro);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
 
+.texto-aencriptar {
+    /*layout*/
+    width: 80%;
     /*Tipografía*/
-    border: none;
     font-family: "Inter";
-    font-style: normal;
     font-size: 32px;
     font-weight: 400;
     line-height: 48px;
-    letter-spacing: 0em;
     text-align: left;
-    color: #0A3871;
-
-    /*Color*/
-    background: #F3F5FC;
-}
-
-.texto::placeholder {
-    color: #0A3871;
-}
-
-.texto:focus,
-.texto:active {
+    color: var(--color-azul);
+    resize: none;
     border: none;
     outline: none;
+    /*Color fondo*/
+    background: none;
 }
 
-.alerta {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 8px;
-    position: absolute;
-    width: 80%;
-    left: 12%;
-    top: 80%;
-}
-
-.alerta p {
-    font-family: "Inter";
-    font-style: normal;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: 0em;
-    text-align: left;
-    opacity: 80%;
-    color: #495057;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.texto-aencriptar::placeholder {
+    color: var(--color-azul);
 }
 
 .botones {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1% 0;
-    position: absolute;
-    width: 80%;
-    left: 12%;
-    top: 82%;
     gap: 24px;
-    /*espaciamento entre íems*/
-
+    margin-top: 16px;
+    ;
+    flex-wrap: wrap;
 }
 
-.btn-encriptar {
-    align-items: center;
-    justify-content: center;
-    /*para que el contenido se justifique al centro*/
-    padding: 2%;
-    /*este es el espaciamiento interno para el contenido*/
-    width: 25%;
-    gap: 8px;
-    background: #0A3871;
+.btn-encriptar,
+.btn-desencriptar, 
+.btn-copiar {
+    max-width: 328px;
+    width: 40%;
+    height: 67px;
     border-radius: 24px;
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
-    letter-spacing: 0em;
-    text-align: center;
+}
+
+.btn-encriptar {
+    background: var(--color-azul);
     color: #FFFFFF;
 }
 
 .btn-desencriptar {
-    box-sizing: border-box;
-    justify-content: center;
-    /*para que el contenido se justifique al centro*/
-    padding: 2%;
-    /*este es el espaciamiento interno para el contenido*/
-    width: 25%;
-    gap: 8px;
-    background: #D8DFE8;
+    background: var(--color-gris);
+    color: var(--color-azul);
     border: solid 1px #0A3871;
-    border-radius: 24px;
+}
+
+.container-resultado {
+    background-color: #fff;
+    height: calc(100% + 48px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    align-items: center;
+}
+
+.muneco {
+    width: 100%;
+    top: 15%;
+}
+
+.btn-copiar{
+    width: 100%;
+    background-color: transparent;    
+    color: var(--color-azul);
+    border: solid 1px;
+    border-color: var(--color-azul);
+    
+}
+
+.oculto{
+    display: none;
+}
+
+
+.titulo-mensaje{
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: center;
+    color: var(--color-gris-oscuro);
+}
+
+.texto-mensaje{
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0em;
+    line-height: 150%;
     text-align: center;
-    color: #0A3871;
+    color: var(--color-gris-oscuro);
+
 }
+
+.container-resultado.ajustar{
+    justify-content: space-between;
+}
+
+.titulo-mensaje.ajustar{
+    height: 70%;
+}
+
+
+
+
+
+@media screen and (max-width: 800px) {
+    .container-principal {
+        grid-template-columns: 1fr;
+        grid-template-rows: 75% auto;
+        width: auto;
+        margin: auto 40px;
+    }
+
+    .container-resultado {
+        margin-top: 20%;
+        height: 80%;
+    }
+
+    .botones {
+        justify-content: center;
+    }
+
+    .btn-encriptar,
+    .btn-desencriptar,
+    .btn-copiar {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .container-resultado {
+        margin-top: 20%;
+        height: 80%;
+    }
+
+
+    .btn-encriptar,
+    .btn-desencriptar, 
+    .btn-copiar {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+/*
 
 .btn-encriptar:hover,
 .btn-desencriptar:hover {
@@ -140,18 +207,11 @@ body {
     padding: 1.8%;
 }
 
-.container-resultado {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: 30%;
-    height: 90%;
-    left: 60%;
-    top: 5%;
-    background: #FFFFFF;
-    box-shadow: 0px 24px 32px -8px #00000014;
-    border-radius: 32px;
-}
+
+
+
+
+
 
 
 .encriptado {
@@ -167,36 +227,35 @@ body {
     text-align: center;
 }
 
-.encriptado h2 {
-    width: 60%;
-    font-family: "Inter";
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #343A40;
-}
 
-.encriptado p {
-    width: 80%;
+
+
+.btn-copiar {
+    box-sizing: border-box;
+    justify-content: center;
+    /*para que el contenido se justifique al centro*/
+/*padding: 2%;
+    /*este es el espaciamiento interno para el contenido*/
+/*width: 25%;
+    gap: 8px;
+    border: solid 1px #0A3871;
+    border-radius: 24px;
     font-family: "Inter";
     font-size: 16px;
     font-weight: 400;
-    line-height: 150%;
+    line-height: 19px;
     letter-spacing: 0em;
     text-align: center;
-    color: #495057;
+    color: #0A3871;
+    display: none;
+}
+
+.btn-copiar:hover {
+    margin: 0.5%;
 
 }
 
-.muneco {
-    position: absolute;
-    width: 80%;
-    /* Porcentaje del ancho de la pantalla */
-    height: 50%;
-    /* Permitir que la altura se ajuste automáticamente */
-    top: 15%;
-    /* Porcentaje de la altura de la pantalla */
+.container-resultado.ajustar{
+    justify-content: space-between;
 }
-
+*/

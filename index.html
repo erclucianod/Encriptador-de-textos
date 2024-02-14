@@ -3,40 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <title>Encriptador de textos</title>
 </head>
 
 <body>
 
     <header>
-        <img class="logo" src="img/logo.png" alt="logo">
+        <div class="logo">
+            <img class="imlogo" src="img/logo.png" alt="logo">
+        </div>
     </header>
 
     <main>
 
         <div class="container-principal">
+            <!-- Contenido de la izquierda -->
             <div class="container-ingreso">
                 <div class="encriptar">
-                    <textarea name="texto" id="texto" class="texto" placeholder="Ingrese el texto aquí" cols="30"
-                        rows="10"></textarea>
+                    <textarea name="texto" id="texto" class="texto-aencriptar" placeholder="Ingrese el texto aquí"
+                        cols="30" rows="10"></textarea>
                 </div>
-                <div class="alerta">
-                    <img src="img/exclamation.png" alt="exclamation">
-                    <p>Sólo letras minúsculas y sin acentos.</p>
-                </div>
-                <div class="botones">
-                    <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar</button>
-                    <button class="btn-desencriptar" type="button" onclick="desencriptar()">Desencriptar</button>
+                <div class="alerta-botones">
+                    <div class="alerta">
+                        <img src="img/exclamation.png" alt="exclamation">
+                        <span>Sólo letras minúsculas y sin acentos.</span>
+                    </div>
+                    <div class="botones">
+                        <button class="btn-encriptar" type="button" id="btnEncriptar">Encriptar</button>
+                        <button class="btn-desencriptar" type="button" id="btnDesencriptar">Desencriptar</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="container-resultado">
-                <img src="img/muneco.png" id="muneco" alt="muneco" class="muneco">
-                <div class="encriptado" id="encriptado">
-                    <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
-                    <p id="texto-mensaje">Ingresa el texto que desees encriptar o desencriptar</p>
+            <div class="container-resultado ajustar">
+                <img src="img/muneco.png" id="muneco" alt="muneco" class="muneco">                
+                    <h2 id="tituloMensaje" class="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+                    <p id="textoMensaje" class="texto-mensaje">Ingresa el texto que desees encriptar o desencriptar</p>
+                    <button class="btn-copiar oculto" type="button" id="btnCopiar">Copiar</button>
                     <!-- <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea> -->
                     <!-- recordá que el atajo del teclado para comentar en html es CTRL + K + C -->
                 </div>
