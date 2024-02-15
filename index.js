@@ -64,6 +64,7 @@ const mostrarResultado = texto => {
     btnCopiar.style.display = "block";
     containerResultado.classList.add("ajustar");
     mensajeFinal.classList.add("ajustar");
+    btnCopiar.focus();
 };
 
 // Función copiar el texto al portapapeles

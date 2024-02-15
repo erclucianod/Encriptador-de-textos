@@ -111,6 +111,7 @@ body {
 
 .container-resultado.ajustar {
     justify-content: space-between;
+    
 }
 
 .muneco {
@@ -172,7 +173,7 @@ body {
 @media screen and (max-width: 800px) {
     .container-principal {
         grid-template-columns: 1fr;
-        grid-template-rows: 75% auto;
+        grid-template-rows: auto;
         width: auto;
         margin: auto 40px;
     }
@@ -180,11 +181,13 @@ body {
     .container-resultado {
         margin-top: 20%;
         height: 80%;
+        min-height: -webkit-fill-available;
     }
 
     .botones {
         justify-content: center;
-    }
+        
+    }   
 
     .btn-encriptar,
     .btn-desencriptar,
@@ -195,8 +198,21 @@ body {
 
 @media screen and (max-width:500px) {
 
+    .container-principal {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: auto;
+        margin: auto 40px;
+    }
+
+    .container-ingreso {
+        margin-block-end: auto;
+        height: 70%;
+
+    }
+
     .container-resultado {
-        margin-top: 20%;
+        margin-block-end: auto;;
         height: 80%;
     }
 
