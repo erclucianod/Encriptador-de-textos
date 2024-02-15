@@ -23,7 +23,7 @@
             <!-- Contenido de la izquierda -->
             <div class="container-ingreso">
                 <div class="encriptar">
-                    <textarea name="texto" id="texto" class="texto-aencriptar" placeholder="Ingrese el texto aquí"
+                    <textarea name="ingresoTexto" id="ingresoTexto" class="ingreso-texto" placeholder="Ingrese el texto aquí"
                         cols="30" rows="10"></textarea>
                 </div>
                 <div class="alerta-botones">
@@ -37,12 +37,13 @@
                     </div>
                 </div>
             </div>
+                <!-- Contenido de la derecha -->
 
-            <div class="container-resultado ajustar">
+            <div id="containerResultado" class="container-resultado ajustar">
                 <img src="img/muneco.png" id="muneco" alt="muneco" class="muneco">                
-                    <h2 id="tituloMensaje" class="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+                    <textarea id="mensajeFinal" class="mensaje-final" placeholder="Ningún mensaje fue encontrado" readonly></textarea>
                     <p id="textoMensaje" class="texto-mensaje">Ingresa el texto que desees encriptar o desencriptar</p>
-                    <button class="btn-copiar oculto" type="button" id="btnCopiar">Copiar</button>
+                    <button class="btn-copiar" type="button" id="btnCopiar">Copiar</button>
                     <!-- <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea> -->
                     <!-- recordá que el atajo del teclado para comentar en html es CTRL + K + C -->
                 </div>

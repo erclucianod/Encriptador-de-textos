@@ -1,42 +1,14 @@
-const ingresoTexto = document.getElementById("texto");
+// Definición de constantes
+const ingresoTexto = document.getElementById("ingresoTexto");
 const btnEncriptar = document.getElementById("btnEncriptar");
 const btnDesencriptar = document.getElementById("btnDesencriptar");
 const btnCopiar = document.getElementById("btnCopiar");
-const tituloMensaje = document.getElementById("tituloMensaje");
+const mensajeFinal = document.getElementById("mensajeFinal");
 const muneco = document.getElementById("muneco");
 const textoMensaje = document.getElementById("textoMensaje");
-const containerResultado = document.getElementById("container-resultado");
+const containerResultado = document.getElementById("containerResultado");
 
-
-// Función de encriptación
-function encriptar(texto) {
-    let newText = texto.toLowerCase();
-    for (let [original, reemplazo] of remplazar) {
-        newText = newText.replaceAll(original, reemplazo);
-    }
-    return newText;
-}
-
-// Evento click del botón "Encriptar"
-btnEncriptar.addEventListener("click", () => {
-    const texto = ingresoTexto.value;
-    const textoEncriptado = encriptar(texto);
-    // console.log(textoEncriptado);
-
-    tituloMensaje.innerHTML = textoEncriptado;
-    muneco.style.display = "none";
-
-    textoMensaje.style.display = "none";
-    btnCopiar.style.display = "block"
-
-    containerResultado.classList.add("ajustar");
-
-
-
-
-});
-
-//Tabla de reemplazo 
+// Tabla de reemplazo
 const remplazar = [
     ["e", "enter"],
     ["o", "ober"],
@@ -44,4 +16,64 @@ const remplazar = [
     ["a", "ai"],
     ["u", "ufat"],
 ];
+
+// Función para validar el texto ingresado
+function validarTexto(texto) {
+    // Expresión regular que valida si el texto contiene solo letras minúsculas sin acentos
+    const regex = /^[a-z]+$/;
+    return regex.test(texto);
+}
+
+// Función para procesar el texto
+function procesarTexto(encriptar) {
+    const texto = ingresoTexto.value.toLowerCase();
+    if (!validarTexto(texto)) {
+        alert("Por favor, ingresa solo letras minúsculas y sin acentos.");
+        return;
+    }
+    
+    const newText = (encriptar ? encriptarTexto : desencriptarTexto)(texto);
+    mostrarResultado(newText);
+}
+
+// Eventos encriptar y desencriptar
+btnEncriptar.addEventListener("click", () => procesarTexto(true));
+btnDesencriptar.addEventListener("click", () => procesarTexto(false));
+
+// Funciones para encriptar y desencriptar el texto
+const encriptarTexto = texto => procesar(texto, remplazar);
+const desencriptarTexto = texto => procesar(texto, remplazar.map(([a, b]) => [b, a]));
+
+// Genéricas para procesar el texto
+const procesar = (texto, tabla) => tabla.reduce((str, [a, b]) => str.replaceAll(a, b), texto);
+
+// Para mostrar el resultado y ajustar el DOM
+const mostrarResultado = texto => {
+    mensajeFinal.textContent = texto;
+    [muneco, textoMensaje].forEach(elemento => elemento.style.display = "none");
+    btnCopiar.style.display = "block";
+    containerResultado.classList.add("ajustar");
+    mensajeFinal.classList.add("ajustar");
+};
+
+// Función copiar el texto al portapapeles
+btnCopiar.addEventListener("click", () => {
+    const texto = mensajeFinal.textContent;
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            alert("Texto copiado!");
+            mensajeFinal.textContent = "";
+            ingresoTexto.value = "";
+            [muneco, textoMensaje].forEach(elemento => elemento.style.display = "block");
+            btnCopiar.style.display = "none";
+            containerResultado.classList.remove("ajustar");
+            mensajeFinal.classList.remove("ajustar");
+            ingresoTexto.focus();
+        })
+        .catch(err => {
+            console.error('Error al copiar el texto: ', err);
+            alert("Error al copiar el texto al portapapeles");
+        });
+});
+
 
