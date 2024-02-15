@@ -22,7 +22,16 @@ function validarTexto(texto) {
     // Expresión regular que valida si el texto contiene solo letras minúsculas, espacios y signos de puntuación
     const regex = /^[a-z\s\p{P}]+$/u;
     return regex.test(texto);
-}
+
+//En esta expresión regular:
+// regex = /^[a-z\s\p{P}]+$/u;
+// ^ y $ indican el comienzo y el final de la cadena respectivamente.
+// [a-z] permite cualquier letra minúscula del alfabeto inglés.
+// \s permite espacios en blanco.
+// \p{P} permite cualquier signo de puntuación Unicode.
+// + indica que uno o más caracteres deben coincidir con la expresión regular.
+// /u al final de la expresión regular indica que se debe usar el modo Unicode.
+// }
 
 // Función para procesar el texto
 function procesarTexto(encriptar) {
