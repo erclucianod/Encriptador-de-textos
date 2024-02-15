@@ -22,6 +22,7 @@ function validarTexto(texto) {
     // Expresión regular que valida si el texto contiene solo letras minúsculas, espacios y signos de puntuación
     const regex = /^[a-z\s\p{P}]+$/u;
     return regex.test(texto);
+}
 
 //En esta expresión regular:
 // regex = /^[a-z\s\p{P}]+$/u;
@@ -35,7 +36,7 @@ function validarTexto(texto) {
 
 // Función para procesar el texto
 function procesarTexto(encriptar) {
-    const texto = ingresoTexto.value.toLowerCase();
+    const texto = ingresoTexto.value;
     if (!validarTexto(texto)) {
         alert("Por favor, ingresa solo letras minúsculas y sin acentos.");
         return;
@@ -84,5 +85,4 @@ btnCopiar.addEventListener("click", () => {
             alert("Error al copiar el texto al portapapeles");
         });
 });
-
 
