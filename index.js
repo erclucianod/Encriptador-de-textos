@@ -19,8 +19,8 @@ const remplazar = [
 
 // Función para validar el texto ingresado
 function validarTexto(texto) {
-    // Expresión regular que valida si el texto contiene solo letras minúsculas sin acentos
-    const regex = /^[a-z]+$/;
+    // Expresión regular que valida si el texto contiene solo letras minúsculas, espacios y signos de puntuación
+    const regex = /^[a-z\s\p{P}]+$/u;
     return regex.test(texto);
 }
 
